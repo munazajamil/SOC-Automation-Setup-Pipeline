@@ -47,8 +47,8 @@ flowchart TD
 A brute-force attack against SMB (port 445) was run from Kali using Hydra
 against a Windows 11 target, generating genuine failed-logon attempts.
 
-![Hydra brute force attack](SOC-Automation-Setup-Pipeline/Screenshot
-/bruteforce-attack.png)
+![Hydra brute force attack](Screenshot/bruteforce-attack.png.png)
+
 
 ### 2. Detection — raw event verification
 Before writing detection logic, the raw Windows Security event was
