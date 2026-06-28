@@ -2,8 +2,6 @@
 
 **Splunk (SIEM) → Shuffle (SOAR) → Jira (Ticketing)**
 
-> A hands-on build documenting how a brute-force detection in a SIEM can be look like.
-
 **Status:** Detection logic fully built and verified against live attack
 traffic. SOAR webhook listener live. Jira ticketing demonstrated manually.
 Automated enrichment + auto-ticketing (the full playbook) is Phase 2
