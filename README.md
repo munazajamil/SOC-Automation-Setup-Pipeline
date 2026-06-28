@@ -146,8 +146,5 @@ demonstrated.
 - Ticketing workflow design (Jira project/issue structure)
 - Attack simulation (Hydra / SMB brute force) in an isolated lab environment
 
-    ├── 04-shuffle-soar-account-setup.png
-    ├── 05-shuffle-usecase-templates.png
-    ├── 06-jira-project-board.png
-    └── 07-jira-ticket-generated-NEEDS-RETAKE.png
-```
+This was it for this "SOC Automation Setup Pipeline" Project by Munnaza Jamil. Performed in Home lab hands on for Experience.
+This project published on github as Portfolio.
