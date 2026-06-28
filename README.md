@@ -49,7 +49,6 @@ flowchart TD
 A brute-force attack against SMB (port 445) was run from Kali using Hydra
 against a Windows 11 target, generating genuine failed-logon attempts.
 
-![Hydra brute force attack](screenshots/01-hydra-bruteforce-attack.png)
 
 ### 2. Detection — raw event verification
 Before writing detection logic, the raw Windows Security event was
@@ -59,7 +58,6 @@ Windows installed, the attacker's address is extracted as
 `Source_Network_Address`, not the commonly-assumed `src_ip` — and the
 account field is `Account_Name`, not `user`.
 
-![Raw failed logon events in Splunk](screenshots/02-splunk-raw-event-verification.png)
 
 ### 3. Detection — correlation search
 A correlation search was built using the real field names, bucketing
