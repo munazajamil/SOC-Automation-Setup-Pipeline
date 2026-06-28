@@ -58,6 +58,7 @@ Windows installed, the attacker's address is extracted as
 `Source_Network_Address`, not the commonly-assumed `src_ip` — and the
 account field is `Account_Name`, not `user`.
 
+![Raw failed logon events in Splunk](Screenshot/failed-login-attempts-logs.png.png)
 
 ### 3. Detection — correlation search
 A correlation search was built using the real field names, bucketing
@@ -72,6 +73,11 @@ index=main EventCode=4625
 | sort - failed_attempts
 ```
 
+![Correlation search detecting brute force](Screenshot/correlation-search-in-splunk.png.png)
+
+![Splunk dashboard overview](Screenshot/splunk-dashboard.png.png)
+
+
 This was converted into a scheduled Splunk alert with a **Webhook** alert
 action, after configuring Splunk's webhook allow-list (required since
 Splunk Enterprise 9.0) directly via `alert_actions.conf`:
@@ -80,29 +86,36 @@ Splunk Enterprise 9.0) directly via `alert_actions.conf`:
 [webhook]
 allowlist.webhook1 = ^https:\/\/shuffler\.io\/api\/v1\/hooks\/
 enable_allowlist = true
+
+
 ```
 
 ### 4. SOAR layer — Shuffle
 Splunk's own SOAR product turned out not to have a genuine self-serve free
 cloud trial (only a self-hosted Community edition, requiring a VM install,
-or a sales-quoted Cloud subscription). [Shuffle](https://shuffler.io) — an
+or a sales-quoted Cloud subscription). [Shuffle](https://shuffler.io)  an
 open-source SOAR platform with a real free cloud tier — was used instead.
 A webhook trigger was configured and activated to receive Splunk's alert
 payload.
 
+![Shuffle SOAR account and workspace](Screenshot/soar-shuffle-dashboard.png.png)
 
-Shuffle's app library was also reviewed for the Phase 2 build —
+Shuffle's app library was also reviewed for the Phase 2 build 
 pre-built apps for Jira, AbuseIPDB, and VirusTotal integrations:
+
+![Shuffle use case templates](Screenshot/use-cases-in-shuffle-soar.png.png)
 
 ### 5. Ticketing — Jira
 A Jira Cloud project (`SOC Automation Lab`) was created to represent the
 analyst-facing side of the pipeline.
 
+![Jira project board](Screenshot/jira-dashboard.png.png)
 
 A ticket was created manually, modeling the exact incident the detection
 logic above would escalate, confirming what the automated hand-off (built
 in Phase 2) is meant to produce:
 
+![Jira ticket for the detected brute force](Screenshot/ticket-generated-in-jira.png.png)
 
 ## Engineering challenges encountered
 
