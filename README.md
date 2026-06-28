@@ -144,5 +144,9 @@ demonstrated.
 - Ticketing workflow design (Jira project/issue structure)
 - Attack simulation (Hydra / SMB brute force) in an isolated lab environment
 
-This was it for this "SOC Automation Setup Pipeline" Project by Munnaza Jamil. Performed in Home lab hands on for Experience.
-This project published on github as Portfolio.
+Here is my other Socialmedia handles,
+
+Likedin: linkedin.com/in/munazajamil
+GitHub: github.com/munazajamil
+Instagram: @munnaza.cyber
+Medium: munnaza.cyber
